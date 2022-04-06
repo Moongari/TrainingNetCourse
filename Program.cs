@@ -17,16 +17,30 @@ namespace Training_framework_4_8
 
 
 
-            
 
-            var controleSalary = new ControleSalary();
-            var job = new LevelJob();
-            ControleSalary.personneHandler = job.accountByName;
-            personneHandler += job.verifyYourAccount;
-            personneHandler += AccountJobByPersonne;
+            // une lambda expression  c'est args=> expression
+            // number=> number * number
+
+            // utilisation d'un delegate de type Func a qui on passe un int entrée et retourne un int
+            Func<int, int> square = number => number * number;
 
 
-            controleSalary.ProcessControl(personneHandler);
+            Console.WriteLine(square(34));
+
+            // si il n'y a pas d'argument ()=> ....
+            // x => ....
+            // (x,y,z) => ......
+
+            const int factor = 5;
+            Func<int, int> addition = n => n + factor;
+            var result = addition(34);
+
+            Console.WriteLine(result);
+
+
+
+
+
 
 
             Console.ReadLine();
@@ -36,10 +50,7 @@ namespace Training_framework_4_8
         }
 
 
-        static void AccountJobByPersonne(Personne per)
-        {
-            Console.WriteLine("Account Personne" + "Salary :" +per.salary +" - " + per.FirstName );
-        }
+       
     }
     
 }
