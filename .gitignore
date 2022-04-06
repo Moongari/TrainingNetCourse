@@ -1,0 +1,5 @@
+bin/
+*.csproj
+Properties/
+obj/
+.vs
