@@ -21,7 +21,8 @@ namespace Training_framework_4_8
 
             var controleSalary = new ControleSalary();
             var job = new LevelJob();
-            ControleSalary.personneHandler = job.accountByName;
+            
+            Action<Personne> personneHandler = job.accountByName;
             personneHandler += job.verifyYourAccount;
             personneHandler += AccountJobByPersonne;
 
