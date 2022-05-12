@@ -9,7 +9,7 @@ namespace Jeu_de_maths
         static int firstNumber, secondNumber,iOperation;
         static Random rndNumber;
         static Random rndOperation;
-        static int questionMax = 5;
+        static int questionMax = 6;
         static int questionMin = 1;
         static int score = 0;
         static int reponseOperation = 0;
@@ -63,7 +63,7 @@ namespace Jeu_de_maths
 
                 //Console.WriteLine("=== Question de mathematique === ");
                 Console.WriteLine();
-                Console.WriteLine($"=== Question : {questionMin}/{questionMax} === ");
+                Console.WriteLine($"=== Question : {questionMin}/{(questionMax-1)} === ");
 
                 typeOperationARealise();
                 Console.WriteLine("indiquez votre réponse : ");
@@ -72,6 +72,12 @@ namespace Jeu_de_maths
                 try
                 {
                     iReponse = int.Parse(reponse);
+
+
+                    //ici on controle le resultat donné par l'utilisateur est on compte les points
+                    controlOperation(iOperation, firstNumber, secondNumber, iReponse);
+
+
                     questionMin++;
                     if (questionMin == questionMax)
                     {
@@ -143,19 +149,19 @@ namespace Jeu_de_maths
             {
                 case 0 :
                     Console.WriteLine();
-                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau est : {ReponseScore.bad}");
+                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau est => NIVEAU : {ReponseScore.bad}");
                     break;
                 case 1:
                 case 2:
                 case 3:
                     Console.WriteLine();
-                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau est : {ReponseScore.good}");
+                    Console.WriteLine($"Bravo tu as fais un bon score => NIVEAU : {ReponseScore.good}");
                     break;
                
                 case 4:
                 case 5:
                     Console.WriteLine();
-                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau est : {ReponseScore.excellent}");
+                    Console.WriteLine($"Excellent, mathématicien..... => NIVEAU : {ReponseScore.excellent}");
                     break;
 
                 default:
@@ -164,7 +170,7 @@ namespace Jeu_de_maths
         }
 
         // en fonction du type d'operation on va verifier le resultat de l'utilisateur 
-        static void controlOperation(int operation,int firstNumber, int secondNumber,string saisieUtilisateur)
+        static void controlOperation(int operation,int firstNumber, int secondNumber,int saisieUtilisateur)
         {
 
             switch (operation)
@@ -172,25 +178,30 @@ namespace Jeu_de_maths
                 case (int)MyOperation.addition:
                     
                     reponseOperation = firstNumber + secondNumber;
-                    if (int.Parse(saisieUtilisateur) == reponseOperation)
+                    if (saisieUtilisateur == reponseOperation)
                     {
-                      
                         score++;
                     }
-                    else
-                    {
-                     
-                    }
+                   
 
                     break;
                 case (int)MyOperation.soustraction:
                     reponseOperation = firstNumber - secondNumber;
-
+            
+                    if (saisieUtilisateur == reponseOperation)
+                    {
+                        score++;
+                    }
 
 
                     break;
                 case (int)MyOperation.multiplication:
                     reponseOperation = firstNumber * secondNumber;
+
+                    if (saisieUtilisateur == reponseOperation)
+                    {
+                        score++;
+                    }
                     break;
 
 
