@@ -18,7 +18,11 @@ namespace premier_programme
             int age_num = 0;
             while (age_num <= 0)
             {
-                Console.Write("votre nom est : " + nom + " Quel est  l' age de la personne  ? ");
+                //Console.Write("votre nom est : " + nom + " Quel est  l' age de la personne  ? ");
+
+                // chaine formatées
+                Console.Write($"votre nom est  : {nom}  Quel est  l' age de la personne  ? ");
+
                 string age_str = Console.ReadLine();
 
                 try
