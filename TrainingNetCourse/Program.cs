@@ -107,7 +107,7 @@ namespace premier_programme
         {
             bool isMajor = false;
 
-            return age > 18 ? isMajor = true : isMajor = false;
+            return age >= 18 ? isMajor = true : isMajor = false;
         }
 
 
