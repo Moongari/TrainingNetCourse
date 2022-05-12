@@ -16,7 +16,9 @@ namespace Jeu_de_maths
         static bool isResultValid = false;
         
 
-
+        /// <summary>
+        /// definit les types des operations
+        /// </summary>
 
         public enum MyOperation
         {
@@ -26,7 +28,9 @@ namespace Jeu_de_maths
         }
 
 
-
+        /// <summary>
+        /// Enumerateur qui donner un niveau
+        /// </summary>
         public enum ReponseScore 
         {
             bad =1,
@@ -34,7 +38,9 @@ namespace Jeu_de_maths
             excellent =3
         }
 
-
+        /// <summary>
+        /// Method qui sert poser la question a l'utilisateur
+        /// </summary>
         static void PoserQuestion()
         {
      
@@ -227,7 +233,10 @@ namespace Jeu_de_maths
         }
 
 
-
+        /// <summary>
+        /// Methode Main qui lance le programme
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 
