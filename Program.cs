@@ -29,29 +29,31 @@ namespace MagiqueNumber
             int valeurSaisie = 0;
 
 
-            while (valeurSaisie == 0 )
+            while (valeurSaisie ==0)
             {
                
                 Console.WriteLine();
                 Console.Write($"Hello, veuillez saisir un nombre :  ");
 
+                // recupere la valeur de l'utilisateur
                 string number = Console.ReadLine();
 
                 try
                 {
                     bool isValidNumber = int.TryParse(number, out valeurSaisie);
 
+                  
+
                     if (!isValidNumber)
                     {
                         Console.WriteLine("vous n'avez pas saisie un nombre");
-                    }else if(valeurSaisie == 0 || valeurSaisie < 0)
-                    {
-                        Console.WriteLine("vous devez entrer un nombre superieur a 0 ");
                     }
 
-                    //valeurSaisie = int.Parse(number);
+                    // verification des saisies de l'utilisateur
+                    VerifNbreSaisie(valeurSaisie);
 
-                    Console.WriteLine($"Nombre saisie {valeurSaisie} ");
+
+                    Console.WriteLine($"Nombre saisie {VerifNbreSaisie(valeurSaisie)} ");
 
                 }
                 catch (Exception)
@@ -92,6 +94,21 @@ namespace MagiqueNumber
 
         }
 
+        static int VerifNbreSaisie(int number)
+        {
+            if (number > 10)
+            {
+                Console.WriteLine($"votre chiffre ne doit pas depasser 10 => valeur saisie : {number}");
+                return -1;
+            }
+            else if(number == 0 || number < 0)
+            {
+                Console.WriteLine("vous devez entrer un nombre superieur a 0 ");
+                return -1;
+            }
+
+            return number;
+        }
 
         static void Main(string[] args)
         {
