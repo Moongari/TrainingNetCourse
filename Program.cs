@@ -37,15 +37,7 @@ namespace Jeu_de_maths
 
         static void PoserQuestion()
         {
-            //rndNumber = new Random();
-            //rndOperation = new Random();
-            //iOperation = rndOperation.Next(1, 3);
-            
-            //firstNumber = rndNumber.Next(0, 10);
-            //secondNumber = rndNumber.Next(0, 10);
-
-
-
+     
 
             int iReponse = 0;
             Console.Write("========= JEU DE MATHS =========");
