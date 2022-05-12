@@ -45,7 +45,7 @@ namespace premier_programme
             string nom = "";
             while (nom == "")
             {
-                Console.Write("Quel est votr nom ? ");
+                Console.Write("Quel est votre nom ? ");
                 nom = Console.ReadLine();
                 nom = nom.Trim();
                 if (nom == "")
