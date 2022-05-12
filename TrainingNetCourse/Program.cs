@@ -105,6 +105,7 @@ namespace premier_programme
 
         static void AfficherResultat(string nom, int age)
         {
+            Console.WriteLine();
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
             Console.WriteLine("bientôt vous aurez " + (age + 1) + " ans");
 
