@@ -140,11 +140,12 @@ namespace Jeu_de_maths
             switch (score)
             {
                 case 0 :
-                    Console.WriteLine();
-                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau est => NIVEAU : {ReponseScore.bad}");
-                    break;
                 case 1:
                 case 2:
+                    Console.WriteLine();
+                    Console.WriteLine($"Hummm  tu dois reviser  ton niveau en MATHS  => NIVEAU : {ReponseScore.bad}");
+                    break;
+            
                 case 3:
                     Console.WriteLine();
                     Console.WriteLine($"Bravo tu as fais un bon score => NIVEAU : {ReponseScore.good}");
@@ -172,7 +173,12 @@ namespace Jeu_de_maths
                     reponseOperation = firstNumber + secondNumber;
                     if (saisieUtilisateur == reponseOperation)
                     {
+                        Console.WriteLine("Bonne réponse :)");
                         score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Mauvaise réponse :( ");
                     }
                    
 
@@ -182,7 +188,12 @@ namespace Jeu_de_maths
             
                     if (saisieUtilisateur == reponseOperation)
                     {
+                        Console.WriteLine("Bonne réponse :)");
                         score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Mauvaise réponse :(");
                     }
 
 
@@ -192,7 +203,12 @@ namespace Jeu_de_maths
 
                     if (saisieUtilisateur == reponseOperation)
                     {
+                        Console.WriteLine("Bonne réponse :)");
                         score++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Mauvaise réponse :(");
                     }
                     break;
 
