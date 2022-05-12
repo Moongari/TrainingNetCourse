@@ -111,7 +111,8 @@ namespace premier_programme
         }
 
 
-        static void AfficherResultat(string nom, int age)
+        // definition d'un parametre optionnel taille
+        static void AfficherResultat(string nom, int age,float taille =0)
         {
             Console.WriteLine();
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
@@ -119,6 +120,11 @@ namespace premier_programme
 
             if(isPersonneMajor(age)) { Console.WriteLine(nom + " vous etes majeur : " + age); } else { Console.WriteLine(nom + " vous etes mineur : " + age); }
 
+            if (taille > 0)
+            {
+                Console.WriteLine(nom + "vous mesurez " + taille + "m de hauteur.");
+            }
+    
         }
 
         static void Main(string[] args)
@@ -140,41 +146,11 @@ namespace premier_programme
             // AFFICHE LES RESULTATS
 
 
-            AfficherResultat(nom, age);
+            AfficherResultat(nom, age,1.8f);
             AfficherResultat(nom2, age2);
 
 
-            //Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
-            //Console.WriteLine("Bonjour, vous vous appelez " + nom2+ ", vous avez " + age2 + " ans");
-
-            ////int age_prochain = age + 1;
-            ////int age_prochain2 = age2 + 1;
-            //Console.WriteLine("bientôt vous aurez " + (age + 1) + " ans");
-            //Console.WriteLine("bientôt vous aurez " + (age2 + 1) + " ans");
-
-
-
-            //    var controleSalary = new ControleSalary();
-            //    var job = new LevelJob();
-
-            //    Action<Personne> personneHandler = job.accountByName;
-            //    personneHandler += job.verifyYourAccount;
-            //    personneHandler += AccountJobByPersonne;
-
-
-            //    controleSalary.ProcessControl(personneHandler);
-
-
-            //    Console.ReadLine();
-
-            //}
-
-
-            //static void AccountJobByPersonne(Personne per)
-            //{
-            //    Console.WriteLine("Account Personne" + "Salary :" + per.salary + " - " + per.FirstName);
-            //}
-
+          
 
         }
     }
