@@ -82,10 +82,10 @@ namespace premier_programme
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
             Console.WriteLine("Bonjour, vous vous appelez " + nom2+ ", vous avez " + age2 + " ans");
 
-            int age_prochain = age + 1;
-            int age_prochain2 = age2 + 1;
-            Console.WriteLine("bientôt vous aurez " + age_prochain + " ans");
-            Console.WriteLine("bientôt vous aurez " + age_prochain2 + " ans");
+            //int age_prochain = age + 1;
+            //int age_prochain2 = age2 + 1;
+            Console.WriteLine("bientôt vous aurez " + (age + 1) + " ans");
+            Console.WriteLine("bientôt vous aurez " + (age2 + 1) + " ans");
 
 
 
