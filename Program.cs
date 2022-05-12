@@ -47,7 +47,7 @@ namespace Jeu_de_maths
 
                 rndNumber = new Random();
                 rndOperation = new Random();
-                iOperation = rndOperation.Next(1, 3);
+                iOperation = rndOperation.Next(1, 4);
 
                 firstNumber = rndNumber.Next(0, 10);
                 secondNumber = rndNumber.Next(0, 10);
@@ -70,7 +70,7 @@ namespace Jeu_de_maths
                     controlOperation(iOperation, firstNumber, secondNumber, iReponse);
 
 
-                    questionMin++;
+                   
                     if (questionMin == questionMax)
                     {
                         Console.WriteLine($"====== votre score est de  :  {score} ");
@@ -78,6 +78,8 @@ namespace Jeu_de_maths
                         Console.WriteLine("====== FIN DU JEU DE MATHS =====");
                         isReponseValid = true;
                     }
+
+                    
 
 
                 }
@@ -180,8 +182,8 @@ namespace Jeu_de_maths
                     {
                         Console.WriteLine("Mauvaise réponse :( ");
                     }
-                   
 
+                    questionMin++;
                     break;
                 case (int)MyOperation.soustraction:
                     reponseOperation = firstNumber - secondNumber;
@@ -196,7 +198,7 @@ namespace Jeu_de_maths
                         Console.WriteLine("Mauvaise réponse :(");
                     }
 
-
+                    questionMin++;
                     break;
                 case (int)MyOperation.multiplication:
                     reponseOperation = firstNumber * secondNumber;
@@ -210,6 +212,8 @@ namespace Jeu_de_maths
                     {
                         Console.WriteLine("Mauvaise réponse :(");
                     }
+
+                    questionMin++;
                     break;
 
 
