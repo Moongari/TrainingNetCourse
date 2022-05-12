@@ -103,11 +103,21 @@ namespace premier_programme
 
 
 
+        static bool isPersonneMajor(int age)
+        {
+            bool isMajor = false;
+
+            return age > 18 ? isMajor = true : isMajor = false;
+        }
+
+
         static void AfficherResultat(string nom, int age)
         {
             Console.WriteLine();
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
             Console.WriteLine("bientôt vous aurez " + (age + 1) + " ans");
+
+            if(isPersonneMajor(age)) { Console.WriteLine(nom + " vous etes majeur : " + age); } else { Console.WriteLine(nom + " vous etes mineur : " + age); }
 
         }
 
