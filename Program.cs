@@ -7,7 +7,7 @@ namespace MagiqueNumber
 
 
         static int nbrOfLife = 5;
-        static int nbreMagique = 8;
+        static int nbreMagique ;
         static bool isValidMagiqueNumber = false;
 
 
@@ -17,9 +17,14 @@ namespace MagiqueNumber
             {
                 Console.Write($"========= NOMBRE MAGIQUE ========== ");
                 Console.WriteLine();
-                Console.Write($"========= Devinez le chiffre entre 0 et 10 ========== ");
+                Console.Write($" Devinez le chiffre entre 0 et 10  ");
+                Console.WriteLine();
+                Console.Write($"= Vous avez {nbrOfLife} tentatives = ");
             }
-           
+
+            Random rnd = new Random();
+            nbreMagique = rnd.Next(1, 10);
+
 
             int valeurSaisie = 0;
 
@@ -96,6 +101,14 @@ namespace MagiqueNumber
             {
                 //DemanderNombre();
                 DevinerleNombre(DemanderNombre());
+
+                if (nbrOfLife == 0)
+                {
+                    Console.WriteLine($"Désolé , vous n'avez plus de tentative  : {nbrOfLife}");
+                    Console.WriteLine($"Relancez le programme");
+                    break;
+                }
+
             }
             
 
