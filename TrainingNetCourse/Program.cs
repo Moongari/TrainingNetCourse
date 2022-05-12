@@ -7,13 +7,13 @@ namespace premier_programme
     {
 
 
-     
-        static int DemanderAge()
+
+        static int DemanderAge(string nom)
         {
             int age_num = 0;
             while (age_num <= 0)
             {
-                Console.Write("Quel est ton age ? ");
+                Console.Write("votre nom est : "+ nom +" Quel est  l' age de la personne  ? ");
                 string age_str = Console.ReadLine();
 
                 try
@@ -39,13 +39,16 @@ namespace premier_programme
 
 
 
-        static string DemanderNom()
+        static string DemanderNom(int idPersonne)
         {
             // DEMANDE LE NOM
+            
+
             string nom = "";
             while (nom == "")
             {
-                Console.Write("Quel est votre nom ? ");
+                Console.Write("quel est le nom  de la personne " + idPersonne +"?");
+                //Console.Write("Quel est votre nom ? ");
                 nom = Console.ReadLine();
                 nom = nom.Trim();
                 if (nom == "")
@@ -65,44 +68,49 @@ namespace premier_programme
 
 
             // DEMANDE le nom
-            string nom = DemanderNom();
+            string nom = DemanderNom(1);
+            string nom2 = DemanderNom(2);
+
 
             // DEMANDE L'AGE
 
 
-            int age = DemanderAge();
+            int age = DemanderAge(nom);
+            int age2 = DemanderAge(nom2);
 
             // AFFICHE LES RESULTATS
             Console.WriteLine("Bonjour, vous vous appelez " + nom + ", vous avez " + age + " ans");
+            Console.WriteLine("Bonjour, vous vous appelez " + nom2+ ", vous avez " + age2 + " ans");
 
             int age_prochain = age + 1;
+            int age_prochain2 = age2 + 1;
             Console.WriteLine("bientôt vous aurez " + age_prochain + " ans");
-            Console.WriteLine("test");
+            Console.WriteLine("bientôt vous aurez " + age_prochain2 + " ans");
 
 
 
-        //    var controleSalary = new ControleSalary();
-        //    var job = new LevelJob();
+            //    var controleSalary = new ControleSalary();
+            //    var job = new LevelJob();
 
-        //    Action<Personne> personneHandler = job.accountByName;
-        //    personneHandler += job.verifyYourAccount;
-        //    personneHandler += AccountJobByPersonne;
-
-
-        //    controleSalary.ProcessControl(personneHandler);
+            //    Action<Personne> personneHandler = job.accountByName;
+            //    personneHandler += job.verifyYourAccount;
+            //    personneHandler += AccountJobByPersonne;
 
 
-        //    Console.ReadLine();
-
-        //}
+            //    controleSalary.ProcessControl(personneHandler);
 
 
-        //static void AccountJobByPersonne(Personne per)
-        //{
-        //    Console.WriteLine("Account Personne" + "Salary :" + per.salary + " - " + per.FirstName);
-        //}
+            //    Console.ReadLine();
+
+            //}
 
 
-    }
+            //static void AccountJobByPersonne(Personne per)
+            //{
+            //    Console.WriteLine("Account Personne" + "Salary :" + per.salary + " - " + per.FirstName);
+            //}
+
+
+        }
     }
 }
