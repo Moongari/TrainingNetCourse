@@ -11,6 +11,8 @@ namespace GenerarteurMotDePasse
 
 
         public static bool isMajuscule { get; set; }
+        private static String  alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+        private static int longueurMax = alphabet.Length;
 
         /// <summary>
         /// Verification sur la valeur saisi n'est pas 0 ou null
@@ -103,7 +105,7 @@ namespace GenerarteurMotDePasse
             Console.WriteLine("Voulez vous integrer des majuscules OUI/NON");
             
             String reponse = Console.ReadLine();
-            if (reponse == "OUI")
+            if (reponse.ToLower() == "oui")
             {
                 isMajuscule = true;
                 return true;
@@ -111,6 +113,49 @@ namespace GenerarteurMotDePasse
             {
                 isMajuscule = false;
                 return false;
+            }
+        }
+
+
+
+        public static void generateurPassword(int longueur)
+        {
+            String chaineAleatoire = string.Empty;
+            int longueurMax = alphabet.Length;
+            Char[] myTabChar = alphabet.ToCharArray();
+
+            HashSet<char> mychaine = new HashSet<char>();
+            Random random = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+
+                while (mychaine.Count < longueur)
+                {
+                    int index = random.Next(0, longueurMax);
+                    mychaine.Add(alphabet[index]);
+                }
+
+
+
+                foreach (var item in mychaine)
+                {
+                    if (isMajuscule)
+                    {
+                        chaineAleatoire += item;
+                        chaineAleatoire = chaineAleatoire.ToUpper();
+                    }
+                    else
+                    {
+                        chaineAleatoire += item;
+                    }
+
+
+                }
+                Console.WriteLine("PWD: " + chaineAleatoire);
+                mychaine.Clear();
+
+                chaineAleatoire = String.Empty;
             }
         }
 
