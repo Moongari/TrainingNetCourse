@@ -11,7 +11,7 @@ namespace GenerarteurMotDePasse
 
 
         public static bool isMajuscule { get; set; }
-        private static String  alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+        private static String  alphabet = "abcdefghijklmnopqrstuvwxyz";
         private static int longueurMax = alphabet.Length;
 
         /// <summary>
@@ -33,13 +33,15 @@ namespace GenerarteurMotDePasse
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns></returns>
-        public static int DemanderNombreEntre(string question, int min, int max)
+        public static int DemanderNombreEntre(string question, int min, int max , int choix = 3)
         {
             int iMin = 5;
             int iMax = 10;
             int valeurSaisie = DemanderNombre(question);
 
 
+            alphabet = WithCaracteresAndNumber(choix);
+            alphabet = WithCaracteresAndNumberSpecialCaractere(choix);
 
             if (valeurSaisie >= iMin && valeurSaisie <= iMax)
             {
@@ -117,6 +119,31 @@ namespace GenerarteurMotDePasse
         }
 
 
+        public static string WithCaracteresAndNumber(int choix)
+        {
+            if(choix == 1)
+            {
+                alphabet = alphabet + "0123456789";
+                return alphabet;
+            }
+
+            return alphabet;
+        }
+
+
+        public static string WithCaracteresAndNumberSpecialCaractere(int choix)
+        {
+            if (choix == 3)
+            {
+                alphabet = alphabet + "0123456789" + "@&!#?";
+                return alphabet;
+            }
+
+            return alphabet;
+        }
+
+
+
 
         public static void generateurPassword(int longueur)
         {
@@ -126,6 +153,9 @@ namespace GenerarteurMotDePasse
 
             HashSet<char> mychaine = new HashSet<char>();
             Random random = new Random();
+
+
+          
 
             for (int i = 0; i < 10; i++)
             {

@@ -13,10 +13,17 @@ namespace GenerateurMotDePasse
         static void Main(string[] args)
         {
             String question = "Indiquez la longueur du mot de passe souhaité :";
-            int longueur = (int)Outils.DemanderNombrePositifNotNull(question);
-            bool isMaj = Outils.isMajuscule;
 
-            String alphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
+            int longueur = (int)Outils.DemanderNombrePositifNotNull(question);
+
+            String question2 = "Voulez vous un mot de passe avec:\n" +
+                "1- Uniquement des caracteres en minuscules \n" +
+                "2- Uniquement des caracteres en Majuscules \n" +
+                "3- Des caracteres et des chiffres \n" +
+                "4- Des caracteres ,chifffres, et caracteres spéciaux ";
+
+          
+          
 
             Outils.generateurPassword(longueur);
          
