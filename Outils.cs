@@ -8,6 +8,10 @@ namespace GenerarteurMotDePasse
 {
      static class Outils
     {
+
+
+        public static bool isMajuscule { get; set; }
+
         /// <summary>
         /// Verification sur la valeur saisi n'est pas 0 ou null
         /// </summary>
@@ -72,6 +76,7 @@ namespace GenerarteurMotDePasse
 
                 try
                 {
+                    WithMajuscule();
                     iLongueurPwd = int.Parse(longueurMotDePasse);
 
 
@@ -89,6 +94,24 @@ namespace GenerarteurMotDePasse
 
 
 
+        }
+
+
+
+        public static bool WithMajuscule()
+        {
+            Console.WriteLine("Voulez vous integrer des majuscules OUI/NON");
+            
+            String reponse = Console.ReadLine();
+            if (reponse == "OUI")
+            {
+                isMajuscule = true;
+                return true;
+            }else
+            {
+                isMajuscule = false;
+                return false;
+            }
         }
 
 
