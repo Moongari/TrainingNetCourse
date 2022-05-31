@@ -33,6 +33,25 @@ namespace collectionApp
             Console.WriteLine("valeur maximale : " + max);
             Console.WriteLine("valeur maximale : "+t[19]);
 
+
+        }
+
+        static void ValeurMinimal(int[] t)
+        {
+
+            Array.Sort(t);
+            int min = t[0];
+            for (int i = 0; i < t.Length; i++)
+            {
+                if (t[i] < min)
+                {
+                    min = t[i];
+                }
+            }
+            Console.WriteLine("valeur minimale : " + min);
+            Console.WriteLine("valeur minimale : " + t[0]);
+
+
         }
 
         static void Main(string[] args)
@@ -50,6 +69,7 @@ namespace collectionApp
             AfficherTableau(t);
             Console.WriteLine();
             ValeurMaximal(t);
+            ValeurMinimal(t);
 
 
 
