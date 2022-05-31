@@ -186,9 +186,26 @@ namespace collectionApp
             //ValeurMinimal(t);
 
             //EntrezNom();
-            var list1 = new List<string>() { "Paul", "Pierre", "Jean", "Raymond","Albert","Riri" };
-            var list2 = new List<string>() { "Paul", "Pierre", "Davido", "Jean","Albert" };
-            ComparaList(list1, list2);
+            var list1 = new List<string>() { "EleveCE1","Paul", "Pierre", "Jean", "Raymond","Albert","Riri" };
+            var list2 = new List<string>() { "EleveCE2","Paul", "Pierre", "Davido", "Jean","Albert" };
+
+            var eleves = new List<List<String>>();
+            eleves.Add(list1);
+            eleves.Add(list2);
+
+            for (int i = 0; i < eleves.Count; i++)
+            {
+                // parcour la liste en recuperant le premier element
+                var eleve = eleves[i];
+                Console.WriteLine($"{eleve[0]} - {eleve.Count} eleves");
+
+                // on parcours de nouveau la liste eleve en partant de l'element a partir de l'indice 1 pour obtenir les eleves
+                for (int j = 1; j < eleve.Count; j++)
+                {
+                    Console.WriteLine($" Nom de l'eleve : {eleve[j]}");
+                }
+            }
+           // ComparaList(list1, list2);
 
 
 
