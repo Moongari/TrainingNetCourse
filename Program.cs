@@ -1,23 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace collectionApp
 {
     internal class Program
 
     {
-
-        static void AfficherTableau (int[] t)
+        /// <summary>
+        /// affiche tableau
+        /// </summary>
+        /// <param name="t"></param>
+        static void AfficherTableau (List<string> t)
         {
-          
 
-            for (int i = 0; i < t.Length; i++)
+
+            foreach (var item in t)
             {
-                Console.WriteLine(t[i]);
+                Console.WriteLine($" nom = {item}");
             }
 
 
         }
-
+        /// <summary>
+        /// valeur maximale
+        /// </summary>
+        /// <param name="t"></param>
         static void ValeurMaximal(int[] t)
         {
             
@@ -35,7 +42,10 @@ namespace collectionApp
 
 
         }
-
+        /// <summary>
+        /// Valeur Minimal
+        /// </summary>
+        /// <param name="t"></param>
         static void ValeurMinimal(int[] t)
         {
 
@@ -54,23 +64,67 @@ namespace collectionApp
 
         }
 
-        static void Main(string[] args)
-        {
-            const int TAILLE_TABLEAU = 20;
-            Random r = new Random();
-            
-            int[] t = new int[TAILLE_TABLEAU];
 
-            for (int i = 0; i < t.Length; i++)
+
+
+        static void EntrezNom()
+        {
+            var noms = new List<string>();
+            while (true)
             {
-                t[i] = r.Next(0,100);
+                Console.Write("Veuillez saisir un nom : ");
+                string nom = Console.ReadLine();
+
+
+                if(nom == "")
+                {
+                    break;
+                }
+
+                
+
+                if (!noms.Contains(nom))
+                {
+                    noms.Add(nom);
+                }
+                else
+                {
+                    Console.WriteLine($"ce {nom} est deja contenu dans la liste");
+                }
+
+
+               
+
             }
 
-            AfficherTableau(t);
-            Console.WriteLine();
-            ValeurMaximal(t);
-            ValeurMinimal(t);
+            noms.Sort();
 
+            AfficherTableau(noms);
+        }
+
+
+
+
+
+
+        static void Main(string[] args)
+        {
+            //const int TAILLE_TABLEAU = 20;
+            //Random r = new Random();
+            
+            //int[] t = new int[TAILLE_TABLEAU];
+
+            //for (int i = 0; i < t.Length; i++)
+            //{
+            //    t[i] = r.Next(0,100);
+            //}
+
+            //AfficherTableau(t);
+            //Console.WriteLine();
+            //ValeurMaximal(t);
+            //ValeurMinimal(t);
+
+            EntrezNom();
 
 
         }
