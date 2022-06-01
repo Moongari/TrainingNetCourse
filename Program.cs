@@ -22,7 +22,7 @@ namespace GenerateurPhrasesAleatoire
         }
 
 
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             // sujet verbe complement
 
