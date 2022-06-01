@@ -140,7 +140,11 @@ namespace collectionApp
         }
 
 
-
+        /// <summary>
+        /// Compare 2 listes
+        /// </summary>
+        /// <param name="l1"></param>
+        /// <param name="l2"></param>
         static void ComparaList(List<string> l1, List<string> l2)
         {
             string identique = "";
@@ -168,11 +172,41 @@ namespace collectionApp
         }
 
 
+
+        static void RecherchePersonne(Dictionary<String, String> dic,string nom)
+        {
+            if (dic.ContainsKey(nom))
+            {
+                Console.WriteLine(dic[nom]);
+            }
+            else
+            {
+                Console.WriteLine($"la personne {nom} n'existe pas");
+            }
+        }
+
+
+        static void Dictionnaire()
+        {
+            var d = new Dictionary<string, string>();
+            d.Add("Jean", "0645894578");
+            d.Add("Paul", "0645894578");
+            d.Add("Marie", "0645897878");
+            d.Add("Albert", "0645889578");
+
+            foreach (var item in d)
+            {
+                Console.WriteLine($"{item.Key}- {item.Value}");
+            }
+
+            RecherchePersonne(d, "David");
+        }
+
         static void Main(string[] args)
         {
             //const int TAILLE_TABLEAU = 20;
             //Random r = new Random();
-            
+
             //int[] t = new int[TAILLE_TABLEAU];
 
             //for (int i = 0; i < t.Length; i++)
@@ -186,27 +220,29 @@ namespace collectionApp
             //ValeurMinimal(t);
 
             //EntrezNom();
-            var list1 = new List<string>() { "EleveCE1","Paul", "Pierre", "Jean", "Raymond","Albert","Riri" };
-            var list2 = new List<string>() { "EleveCE2","Paul", "Pierre", "Davido", "Jean","Albert" };
+            //var list1 = new List<string>() { "EleveCE1","Paul", "Pierre", "Jean", "Raymond","Albert","Riri" };
+            //var list2 = new List<string>() { "EleveCE2","Paul", "Pierre", "Davido", "Jean","Albert" };
+            //var list3 = new List<string>() { "EleveCM1", "Mohammed", "Yassine", "Sarah", "Ines", "Robbert" };
 
-            var eleves = new List<List<String>>();
-            eleves.Add(list1);
-            eleves.Add(list2);
+            //var eleves = new List<List<String>>();
+            //eleves.Add(list1);
+            //eleves.Add(list2);
+            //eleves.Add(list3);
 
-            for (int i = 0; i < eleves.Count; i++)
-            {
-                // parcour la liste en recuperant le premier element
-                var eleve = eleves[i];
-                Console.WriteLine($"{eleve[0]} - {eleve.Count} eleves");
+            //for (int i = 0; i < eleves.Count; i++)
+            //{
+            //    // parcour la liste en recuperant le premier element
+            //    var eleve = eleves[i];
+            //    Console.WriteLine($"{eleve[0]} - {eleve.Count} eleves");
 
-                // on parcours de nouveau la liste eleve en partant de l'element a partir de l'indice 1 pour obtenir les eleves
-                for (int j = 1; j < eleve.Count; j++)
-                {
-                    Console.WriteLine($" Nom de l'eleve : {eleve[j]}");
-                }
-            }
-           // ComparaList(list1, list2);
-
+            //    // on parcours de nouveau la liste eleve en partant de l'element a partir de l'indice 1 pour obtenir les eleves
+            //    for (int j = 1; j < eleve.Count; j++)
+            //    {
+            //        Console.WriteLine($" Nom de l'eleve : {eleve[j]}");
+            //    }
+            //}
+            // ComparaList(list1, list2);
+            Dictionnaire();
 
 
         }
