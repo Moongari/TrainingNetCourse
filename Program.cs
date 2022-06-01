@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace collectionApp
 {
@@ -208,6 +209,22 @@ namespace collectionApp
             RecherchePersonne(d, "David");
         }
 
+
+
+        static void TriByLinq()
+        {
+            var list1 = new List<string>() { "EleveCE1", "Paule", "Pierre", "Jeanne", "Raymond", "Alberte", "Riri" };
+
+            list1 = list1.OrderBy(e=>e).ToList();
+            list1 = list1.Where(nom => nom.Length > 4).ToList();
+            list1 = list1.Where(nom => nom.StartsWith("P") ).ToList();
+
+            foreach (var item in list1)
+            {
+                Console.WriteLine($"{item}");
+            }
+        }
+
         static void Main(string[] args)
         {
             //const int TAILLE_TABLEAU = 20;
@@ -248,8 +265,8 @@ namespace collectionApp
             //    }
             //}
             // ComparaList(list1, list2);
-            Dictionnaire();
-
+            //Dictionnaire();
+            TriByLinq();
 
         }
     }
