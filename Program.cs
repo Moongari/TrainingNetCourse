@@ -172,7 +172,11 @@ namespace collectionApp
         }
 
 
-
+        /// <summary>
+        /// Methode Recherche personne
+        /// </summary>
+        /// <param name="dic"></param>
+        /// <param name="nom"></param>
         static void RecherchePersonne(Dictionary<String, String> dic,string nom)
         {
             if (dic.ContainsKey(nom))
@@ -185,7 +189,9 @@ namespace collectionApp
             }
         }
 
-
+        /// <summary>
+        /// Dictionnaire
+        /// </summary>
         static void Dictionnaire()
         {
             var d = new Dictionary<string, string>();
