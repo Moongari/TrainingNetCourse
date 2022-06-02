@@ -68,7 +68,7 @@ namespace PooApp
             this.numeroPersonne = nombreDePersonnes;
         }
 
-        public virtual void Afficher()
+        public  void Afficher()
         {
 
             AfficherNomEtAge();

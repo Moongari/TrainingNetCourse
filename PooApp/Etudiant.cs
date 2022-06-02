@@ -35,7 +35,7 @@ namespace PooApp
 
 
 
-        public  override void Afficher()
+        new public   void Afficher()
         {
 
             AfficherNomEtAge();

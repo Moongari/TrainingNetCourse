@@ -39,7 +39,7 @@ namespace PooApp
                 { "Sport",9f}
             };
 
-            var enfant1 = new Enfant("Sophie", 7,notes,"6eme",new Personne() { age=45,nom="Ahmed",emploi="Professeur "});
+            var enfant1 = new Personne("Sophie", 7,null);
             enfant1.Afficher();
 
 
