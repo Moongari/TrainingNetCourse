@@ -41,7 +41,10 @@ namespace PooApp
             };
 
             var enfant1 = new Enfant("Sophie", 7,notes,"6eme",new Personne() { age=45,nom="Ahmed",emploi="Professeur "});
-            enfant1.Afficher();
+            //enfant1.Afficher();
+
+            TableMultiplication table = new TableMultiplication(9);
+            table.Afficher();
 
 
         }
