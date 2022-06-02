@@ -19,7 +19,19 @@ namespace PooApp
         int numeroPersonne;
 
 
+        public int Age
+        {
+            get { return age; }
 
+            set
+            {
+                if (value > 0)
+                {
+                    age = value;
+                }
+            }
+
+        }
 
         public Personne()
         {
@@ -34,9 +46,9 @@ namespace PooApp
         /// </summary>
         /// <param name="nom"></param>
         /// <param name="age"></param>
-        public Personne(String nom, int age) : this(nom,age, "(non definit)") 
-        { 
-        
+        public Personne(String nom, int age) : this(nom, age, "(non definit)")
+        {
+
         }
 
         /// <summary>
@@ -45,7 +57,7 @@ namespace PooApp
         /// <param name="nom"></param>
         /// <param name="age"></param>
         /// <param name="emploi"></param>
-        public Personne(string nom, int age, string emploi = null):this()
+        public Personne(string nom, int age, string emploi = null) : this()
         {
             this.nom = nom;
             this.age = age;
@@ -77,5 +89,5 @@ namespace PooApp
         }
 
 
-        }
     }
+}

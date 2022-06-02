@@ -16,7 +16,9 @@ namespace PooApp
             var personne2 = new Personne() { nom = "TOTO", age = 34, emploi = "Docteur" };
             // on ne peut pas car l'accesseur est definit comme init
             //personne2.nom = "Albert";
+            personne2.Age = 30;
             personne2.Afficher();
+           
 
 
         }
