@@ -10,15 +10,22 @@ namespace PooApp
     {
         static int nombreDePersonnes = 0;
 
-        public string nom;
-        int age;
-        string emploi;
+
+        //il est possible grace a C#9 d'initialiser une valeur au moment de la construction de l'objet
+        //mais il n'est pas possible de la setter par la suite.
+        public string nom { get; init; }
+        public int age { get; set; }
+        public string emploi { get; set; }
         int numeroPersonne;
 
 
 
 
-
+        public Personne()
+        {
+            nombreDePersonnes++;
+            this.numeroPersonne = nombreDePersonnes;
+        }
 
 
 
@@ -32,7 +39,13 @@ namespace PooApp
         
         }
 
-        public Personne(string nom, int age, string emploi = null)
+        /// <summary>
+        /// appel du constructeur par defaut
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="age"></param>
+        /// <param name="emploi"></param>
+        public Personne(string nom, int age, string emploi = null):this()
         {
             this.nom = nom;
             this.age = age;
