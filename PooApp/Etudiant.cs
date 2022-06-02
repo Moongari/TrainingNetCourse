@@ -11,22 +11,23 @@ namespace PooApp
 
         public string infoEtudes { get; set; }
         public string Name { get; set; }
-        public int age { get; set; }
+        public int AgeEtudiant { get; set; }
         public int Id { get; set; }
         int numeroPersonne=0,idEtudiant;
 
+        public Personne professeurPrincipal { get; set; }
 
-        public Etudiant()
+
+        
+
+        public Etudiant(string nom, int age, string infoEtude = null, Personne professeur = null) : base(nom,age,"Etudiant")
         {
             idEtudiant++;
             numeroPersonne = idEtudiant;
-        }
-
-        public Etudiant(string nom, int age, string infoEtude = null) : this()
-        {
             this.nom = nom;
-            this.age = age;
+            this.AgeEtudiant = age;
             this.infoEtudes = infoEtude;
+            this.professeurPrincipal = professeur;
         }
 
 
@@ -46,6 +47,15 @@ namespace PooApp
             else
             {
                 Console.WriteLine("  niveau Etude : " + infoEtudes);
+            }
+
+            if(professeurPrincipal != null)
+            {
+                professeurPrincipal.Afficher();
+            }
+            else
+            {
+                Console.WriteLine("  vous n'avez pas de professeur principal");
             }
         }
 
