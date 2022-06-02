@@ -10,9 +10,11 @@ namespace PooApp
     {
 
         string classEcole = "";
-        public Enfant(string nom, int age, string infoEtude = null, Personne professeur = null) : base(nom, age, infoEtude, professeur)
+        Dictionary<String,float> notes = new Dictionary<String,float>();
+        public Enfant(string nom, int age, Dictionary<String, float> notes,string infoEtude = null, Personne professeur = null) : base(nom, age, infoEtude, professeur)
         {
             this.classEcole = infoEtude;
+            this.notes = notes;
         }
 
 
@@ -31,6 +33,26 @@ namespace PooApp
             }
 
             this.PossedeUnProfesseurPrincipal();
+
+            foreach (var item in notes)
+            {
+                Console.WriteLine($" Cours de {item.Key} - note :{item.Value}/10");
+            }
+
+            var MatiereMoyenA = notes.Where(x => x.Value >5)
+                .OrderByDescending(x => x.Value)
+                .Select(x => x.Key).ToList();
+
+            Console.WriteLine("tu as la moyen dans les matieres suivantes ");
+            Console.WriteLine("===================================");
+            foreach (var item in MatiereMoyenA)
+            {
+            
+            
+                Console.WriteLine($"            { item }    ");
+             
+            }
+            Console.WriteLine("===================================");
         }
     }
 }

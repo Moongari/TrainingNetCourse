@@ -19,7 +19,7 @@ namespace PooApp
             //personne2.Age = 30;
             //personne2.Afficher();
 
-          
+
 
             //var etudiant1 = new Etudiant("Ronaldo", 23);
             //var etudiant2 = new Etudiant("Noor",43,"Eleve ingenieur" );
@@ -31,7 +31,15 @@ namespace PooApp
             //Console.WriteLine();
             //etudiant3.Afficher();
 
-            var enfant1 = new Enfant("Sophie", 7,"CP");
+            Dictionary<string, float> notes = new Dictionary<string, float>() {
+                { "Maths",5.5f},
+                { "Geo", 3.5f },
+                { "Histoire", 6.5f } ,
+                { "SVT",8.7f},
+                { "Sport",9f}
+            };
+
+            var enfant1 = new Enfant("Sophie", 7,notes,"6eme",new Personne() { age=45,nom="Ahmed",emploi="Professeur "});
             enfant1.Afficher();
 
 
