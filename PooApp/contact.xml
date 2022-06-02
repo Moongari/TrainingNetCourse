@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<contacts>
+  <contact id="1">
+    <nom>Ahmed</nom>
+    <age>34</age>
+  </contact>
+  <contact id="2">
+    <nom>Albert</nom>
+    <age>56</age>
+  </contact>
+  <contact id="3">
+    <nom>Sophie</nom>
+    <age>35</age>
+  </contact>
+  <contact id="4">
+    <nom>Robert</nom>
+    <age>21</age>
+  </contact>
+  <contact id="5">
+    <nom>Richard</nom>
+    <age>45</age>
+  </contact>
+</contacts>

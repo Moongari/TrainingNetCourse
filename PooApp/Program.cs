@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace PooApp
 {
@@ -8,7 +9,9 @@ namespace PooApp
     {
         static void Main(string[] args)
         {
-        
+
+
+            Console.WriteLine($"========LINQ TO Object============");
             var listEtudiant = new List<Etudiant>();
             listEtudiant.Add(new Etudiant() { Name = "Billy", Age = 34, Id = 1 });
             listEtudiant.Add(new Etudiant() { Name = "Arnold", Age = 45, Id = 2 });
@@ -38,6 +41,10 @@ namespace PooApp
                 .OrderByDescending(e => e.Age).ToList();
 
 
+            
+
+
+
             foreach (var item in EtudiantMajeur)
             {
                 Console.WriteLine($"les etudiants majeurs sont : {item.Name} :  {item.Id}");
@@ -56,7 +63,26 @@ namespace PooApp
             {
                 Console.WriteLine($"les etudiants age compris entre [30 et 45]: {item.Name} , AGE:  {item.Age}");
             }
-            
+
+            Console.WriteLine($"========LINQ TO XML============");
+
+            // lecture d'une fichier XML avec Linq
+            XElement xmldoc = XElement.Load("C:\\Users\\moungamo\\source\\repos\\PooApp\\PooApp\\contact.xml");
+            IEnumerable<XElement> contacts = xmldoc.Elements("contact");
+
+            var req1 = from c in contacts
+                       where Int32.Parse(c.Element("age").Value)>40
+                       orderby c.Attribute("id").Value ascending
+                       select c;
+
+            foreach (var item in req1)
+            {
+                Console.WriteLine($"ID {item.Attribute("id").Value}");
+                Console.WriteLine($"nom {item.Element("nom").Value}");
+                Console.WriteLine($"Age {item.Element("age").Value}");
+            }
+
+
         }
     }
 }
