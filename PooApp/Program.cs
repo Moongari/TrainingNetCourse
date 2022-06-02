@@ -47,6 +47,8 @@ namespace PooApp
             table.Afficher();
 
 
+
+
         }
     }
 }
