@@ -31,7 +31,7 @@ namespace PooApp
             //Console.WriteLine();
             //etudiant3.Afficher();
 
-            var enfant1 = new Etudiant("Sophie", 7);
+            var enfant1 = new Enfant("Sophie", 7,"CP");
             enfant1.Afficher();
 
 

@@ -49,7 +49,15 @@ namespace PooApp
                 Console.WriteLine("  niveau Etude : " + infoEtudes);
             }
 
-            if(professeurPrincipal != null)
+            PossedeUnProfesseurPrincipal();
+                  
+        }
+
+
+
+        protected void PossedeUnProfesseurPrincipal()
+        {
+            if (professeurPrincipal != null)
             {
                 professeurPrincipal.Afficher();
             }
