@@ -36,10 +36,11 @@ namespace PooApp
                 { "Geo", 3.5f },
                 { "Histoire", 6.5f } ,
                 { "SVT",8.7f},
-                { "Sport",9f}
+                { "Sport",9f },
+                { "Menusierie",9f}
             };
 
-            var enfant1 = new Personne("Sophie", 7,null);
+            var enfant1 = new Enfant("Sophie", 7,notes,"6eme",new Personne() { age=45,nom="Ahmed",emploi="Professeur "});
             enfant1.Afficher();
 
 

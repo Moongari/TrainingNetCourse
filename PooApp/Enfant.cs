@@ -39,7 +39,7 @@ namespace PooApp
                 Console.WriteLine($" Cours de {item.Key} - note :{item.Value}/10");
             }
 
-            var MatiereMoyenA = notes.Where(x => x.Value >5)
+            var MatiereMoyenA = notes.Where(x => (x.Value >5) && (x.Key.StartsWith("M")))
                 .OrderByDescending(x => x.Value)
                 .Select(x => x.Key).ToList();
 
