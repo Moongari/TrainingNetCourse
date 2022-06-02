@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PooApp
 {
-    class Personne
+    public class Personne
     {
         static int nombreDePersonnes = 0;
 
 
         //il est possible grace a C#9 d'initialiser une valeur au moment de la construction de l'objet
         //mais il n'est pas possible de la setter par la suite.
-        public string nom { get; init; }
+        public string nom { get; set; }
         public int age { get; set; }
         public string emploi { get; set; }
         int numeroPersonne;
@@ -68,11 +68,11 @@ namespace PooApp
             this.numeroPersonne = nombreDePersonnes;
         }
 
-        public void Afficher()
+        public virtual void Afficher()
         {
-            Console.WriteLine("PERSONNE N°" + numeroPersonne);
-            Console.WriteLine("  NOM : " + nom);
-            Console.WriteLine("  AGE : " + age + " ans");
+
+            AfficherNomEtAge();
+
             if (emploi == null)
             {
                 Console.WriteLine("  Aucun emploi spécifié");
@@ -88,6 +88,13 @@ namespace PooApp
             Console.WriteLine("Nombre total de personnes : " + nombreDePersonnes);
         }
 
+
+        protected  void AfficherNomEtAge()
+        {
+            Console.WriteLine("PERSONNE N°" + numeroPersonne);
+            Console.WriteLine("  NOM : " + nom);
+            Console.WriteLine("  AGE : " + age + " ans");
+        }
 
     }
 }

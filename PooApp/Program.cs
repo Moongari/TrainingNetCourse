@@ -18,6 +18,11 @@ namespace PooApp
             //personne2.nom = "Albert";
             personne2.Age = 30;
             personne2.Afficher();
+
+            var etudiant1 = new Etudiant("Ronaldo", 23);
+            var etudiant2 = new Etudiant() { nom = "Riri", age = 45, infoEtudes = "Ingenieur" };
+            etudiant1.Afficher();
+            etudiant2.Afficher();
            
 
 
